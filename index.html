@@ -11,7 +11,8 @@ box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:en
 *{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,system-ui,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;line-height:1.5;letter-spacing:-.05em}
 input,textarea,button{letter-spacing:inherit}
-.wrap{max-width:520px;margin:0 auto;padding:16px}
+#stage{width:100%;overflow:hidden;display:flex;justify-content:center}
+.wrap{width:520px;flex:none;padding:16px;transform-origin:top left}
 #intro{min-height:85vh;display:flex;flex-direction:column;justify-content:center;padding:20px 4px}
 .intro-box{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px 20px}
 .intro-badge{display:inline-block;background:var(--ac);color:var(--on);font-weight:800;font-size:13px;padding:3px 12px 5px;border-radius:99px;margin-bottom:14px}
@@ -24,7 +25,7 @@ input,textarea,button{letter-spacing:inherit}
 .start-btn{width:100%;margin-top:10px;padding:15px;font-weight:800;font-size:16px}
 #cap{background:var(--bg);padding:8px 4px 20px}
 .hero{padding:28px 18px 22px;border-radius:22px;background:var(--ac);color:var(--on);margin-bottom:18px;position:relative;--fs:128px;min-height:calc(var(--fs) + 50px);display:flex;align-items:center}
-.tv{flex:1;min-width:0;font-weight:800;font-size:min(36px,calc((100vw - 206px)/4.9));line-height:1.12;padding-right:calc(var(--fs) + 10px);margin-top:0;transform:translate(0,-5px)}
+.tv{flex:1;min-width:0;font-weight:800;font-size:36px;line-height:1.12;padding-right:calc(var(--fs) + 10px);margin-top:0;transform:translate(0,-5px)}
 .tv .l1{white-space:nowrap}
 .tv .l2{display:flex;align-items:center;flex-wrap:wrap;gap:6px .4em}
 .tag{display:inline-flex;align-items:center;height:1.01em;max-width:100%;font-size:1em;font-weight:800;line-height:1;color:var(--onr);letter-spacing:-.03em;transform:translateY(calc(.15em - 1px))}
@@ -60,11 +61,12 @@ button.p{background:var(--ac);color:var(--on);border-color:var(--ac)}
 .sw i{width:28px;height:28px;border-radius:50%;cursor:pointer;border:2px solid var(--card);outline:1px solid var(--line)}
 .view .edit{display:none}
 .hint{color:var(--sub);font-size:13px}
-.snap{width:800px}.snap.c2{width:600px}.snap.c3 .grid{grid-template-columns:repeat(3,1fr)}.snap .card.wide{grid-column:auto}.snap .card.wide .ph{aspect-ratio:3/4}
+.snap{width:800px;transform:none !important;margin:0 !important}.snap.c2{width:600px}.snap.c3 .grid{grid-template-columns:repeat(3,1fr)}.snap .card.wide{grid-column:auto}.snap .card.wide .ph{aspect-ratio:3/4}
 #ov{position:fixed;inset:0;background:#000d;z-index:99;overflow:auto;padding:16px;text-align:center;color:#fff}#ov img{max-width:min(100%,480px);border-radius:8px}
 button:focus-visible,.ph:focus-visible,i:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
 </style></head><body>
-<div class="wrap">
+<div id="stage">
+<div class="wrap" id="wrap">
   <div id="intro">
     <div class="intro-box">
       <span class="intro-badge">2026 RECAP</span>
@@ -96,6 +98,7 @@ button:focus-visible,.ph:focus-visible,i:focus-visible{outline:2px solid var(--a
     <p class="hint">사진은 카드를 눌러 올려요. 유튜브 링크를 넣으면 완성본에서 사진을 누를 때 영상으로 이동해요. 내용은 이 기기 브라우저에 저장돼요.</p></div>
   </div>
 </div>
+</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script>
 var SH=['헤메코','파트','모에화','라이브','무대','메세지'];
@@ -112,6 +115,21 @@ try{var raw=localStorage.getItem('idolrecap');if(raw){S=JSON.parse(raw);
 S.title='2026 My\nK-pop tags';
 if(!Array.isArray(S.cards)||!S.cards.length){S.cards=DEF.map(function(l){return{l:l,n:'',o:'',i:''}})}
 var view=false,$=function(i){return document.getElementById(i)};
+function syncScale(){
+ var st=$('stage'),w=$('wrap');if(!st||!w)return;
+ var vw=document.documentElement.clientWidth||window.innerWidth||520;
+ if(vw<=530){
+  var sc=vw/520;
+  st.style.display='block';
+  w.style.transform='scale('+sc+')';
+  st.style.height=Math.ceil(w.offsetHeight*sc)+'px';
+ }else{
+  st.style.display='flex';
+  w.style.transform='';
+  st.style.height='';
+ }
+}
+window.addEventListener('resize',syncScale);
 function save(){try{localStorage.setItem('idolrecap',JSON.stringify(S))}catch(e){}}
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
 function isFree(l){return /파트|직캠|메세지/.test(l||'')}
@@ -146,8 +164,9 @@ function render(){
   if(view)return '<div class="card'+wide+'"><span class="badge">'+esc(c.l)+'</span>'+phv(c,img)+'</div>';
   return '<div class="card'+wide+'"><span class="badge">'+esc(c.l)+'</span><div class="ph" tabindex="0" data-p="'+k+'">'+img+(c.i?'<button class="pd" data-pd="'+k+'" aria-label="사진 지우기">사진 지우기</button>':'')+'</div><input data-f="y" data-k="'+k+'" inputmode="url" placeholder="유튜브 링크 (선택)" aria-label="유튜브 링크" value="'+esc(c.y||'')+'"><div class="th">'+thHtml(c.y)+'</div></div>';
  }).join('');
+ syncScale();
 }
-$('g').addEventListener('input',function(e){var d=e.target.dataset;if(d.f){S.cards[d.k][d.f]=e.target.value;save();if(d.f==='y'){var t=e.target.parentNode.querySelector('.th');if(t)t.innerHTML=thHtml(e.target.value)}}});
+$('g').addEventListener('input',function(e){var d=e.target.dataset;if(d.f){S.cards[d.k][d.f]=e.target.value;save();if(d.f==='y'){var t=e.target.parentNode.querySelector('.th');if(t)t.innerHTML=thHtml(e.target.value);syncScale()}}});
 $('g').addEventListener('click',function(e){
  var d=e.target.dataset;
  if(d.pd!==undefined){S.cards[+d.pd].i='';save();render();return}
@@ -190,4 +209,5 @@ $('in-nick').value=S.nick||'';
 $('in-fav').value=S.fav||'';
 $('intro').style.display='';
 $('main').style.display='none';
+syncScale();
 </script></body></html>
