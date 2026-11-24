@@ -187,7 +187,7 @@ try{
 S.title='2026 My\nK-pop tags';
 S.cards=normalizeCards(S.cards);
 
-var view=false,$=function(i){return document.getElementById(i)};
+var view=false,savingSnap=false,$=function(i){return document.getElementById(i)};
 function syncScale(){
  var st=$('stage'),w=$('wrap');if(!st||!w)return;
  var vw=document.documentElement.clientWidth||window.innerWidth||520;
@@ -317,9 +317,11 @@ function paintCardCanvases(){
  }));
 }
 
+function emptyCardLabel(){return savingSnap?'고민 중...':'사진 추가'}
+
 function phv(c,k,hasImg){
  var ok=/^https?:\/\//i.test(c.y||'');
- var inner=hasImg?'<canvas class="p-cv" width="800" height="800" data-k="'+k+'"></canvas>':'<span>사진 추가</span>';
+ var inner=hasImg?'<canvas class="p-cv" width="800" height="800" data-k="'+k+'"></canvas>':'<span>'+emptyCardLabel()+'</span>';
  var ph='<div class="ph" style="cursor:default">'+inner+'</div>';
  return ok?'<a class="lk" href="'+esc(c.y)+'" target="_blank" rel="noopener noreferrer">'+ph+'</a>':ph;
 }
@@ -482,7 +484,7 @@ function render(){
  $('g').innerHTML=S.cards.map(function(c,k){
   var hasImg=Boolean(c.i);
   if(view)return '<div class="card">'+badgeHtml(c.l)+phv(c,k,hasImg)+'</div>';
-  var inner=hasImg?'<canvas class="p-cv" width="800" height="800" data-k="'+k+'"></canvas>':'<span>사진 추가</span>';
+  var inner=hasImg?'<canvas class="p-cv" width="800" height="800" data-k="'+k+'"></canvas>':'<span>'+emptyCardLabel()+'</span>';
   return '<div class="card">'+badgeHtml(c.l)+'<div class="ph" tabindex="0" data-p="'+k+'">'+inner+(hasImg?'<button class="pd" data-pd="'+k+'" aria-label="사진 지우기">사진 지우기</button>':'')+'</div><input data-f="y" data-k="'+k+'" inputmode="url" placeholder="유튜브 링크 (선택)" aria-label="유튜브 링크" value="'+esc(c.y||'')+'"><div class="th">'+thHtml(c.y)+'</div></div>';
  }).join('');
  paintCardCanvases();
@@ -548,10 +550,10 @@ $('fc').onclick=function(e){if(view)return;if(e.target.dataset.fd){S.face='';sav
 $('fc').onkeydown=function(e){if(e.key==='Enter'&&!view&&!e.target.dataset.fd)pickFace()};
 $('tg').onclick=function(){view=!view;render()};
 
-/* 이미지 저장: 1번 코드 방식 #cap 캡처 후 1620x1620 정사각형 출력, 박스 전체 y축 +10px 하향 */
+/* 이미지 저장: 1번 코드 방식 #cap 캡처 후 1620x1620 정사각형 출력, 박스 전체 y축 +10px 하향, 빈 사진은 '고민 중...' */
 $('sv').onclick=function(){
- var was=view;view=true;render();
- if(!window.html2canvas){alert('이미지 저장을 불러오지 못했어요. 화면을 캡처해 주세요.');view=was;render();return}
+ var was=view;view=true;savingSnap=true;render();
+ if(!window.html2canvas){alert('이미지 저장을 불러오지 못했어요. 화면을 캡처해 주세요.');savingSnap=false;view=was;render();return}
  var st=$('stage'),w=$('wrap'),cap=$('cap'),bg=getComputedStyle(document.body).backgroundColor;
  var prevStageDisplay=st.style.display,prevStageHeight=st.style.height,prevWrapTransform=w.style.transform;
  st.style.display='block';
@@ -563,6 +565,7 @@ $('sv').onclick=function(){
  cvs.forEach(function(cv){cv.width=1200;cv.height=1200});
 
  function restore(){
+  savingSnap=false;
   cap.classList.remove('snap','c2','c3');
   w.style.transform=prevWrapTransform;
   st.style.display=prevStageDisplay;
