@@ -14,14 +14,14 @@ input,textarea,button{letter-spacing:inherit;word-break:keep-all;overflow-wrap:b
 #stage{width:100%;overflow:hidden;display:flex;justify-content:center}
 .wrap{width:520px;flex:none;padding:16px;transform-origin:top left}
 #intro{min-height:85vh;display:flex;flex-direction:column;justify-content:center;padding:20px 4px}
-.intro-box{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px 20px}
+.intro-box{background:var(--card);border:none;border-radius:22px;padding:28px 20px}
 .intro-badge{display:inline-block;background:var(--ac);color:var(--on);font-weight:800;font-size:13px;padding:3px 12px 5px;border-radius:99px;margin-bottom:14px}
 .intro-title{font-weight:800;font-size:32px;line-height:1.15;margin:0 0 8px}
 .intro-sub{color:var(--sub);font-size:14px;margin:0 0 24px}
 .fld{margin-bottom:14px}
 .fld label{display:block;font-size:13px;color:var(--sub);margin-bottom:6px}
-.fld input{width:100%;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:12px;padding:13px 14px;font:inherit;font-size:16px}
-.fld input:focus{outline:2px solid var(--ac);border-color:transparent}
+.fld input{width:100%;border:none;background:var(--bg);color:var(--ink);border-radius:12px;padding:13px 14px;font:inherit;font-size:16px}
+.fld input:focus{outline:none}
 .start-btn{width:100%;margin-top:10px;padding:15px;font-weight:800;font-size:16px}
 #cap{background:var(--bg);padding:8px 4px 20px}
 .hero{padding:28px 18px 22px;border-radius:22px;background:var(--ac);color:var(--on);margin-bottom:18px;position:relative;--fs:128px;min-height:calc(var(--fs) + 50px);display:flex;align-items:center}
@@ -37,7 +37,9 @@ input,textarea,button{letter-spacing:inherit;word-break:keep-all;overflow-wrap:b
 .face{flex:none;width:96px;height:96px;border-radius:50%;background:#0001;border:3px solid var(--on);overflow:hidden;display:flex;align-items:center;justify-content:center;color:var(--on);font-size:12px;line-height:1.3;text-align:center;cursor:pointer}
 .face img{width:100%;height:100%;object-fit:cover}
 .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:8px 8px 12px;position:relative}
+.card{background:var(--card);border:none;border-radius:14px;padding:8px 8px 12px;position:relative}
+.snap .card{background:#1C1B1A}
+.snap .btk circle{fill:#1C1B1A}
 .badge{display:inline-flex;align-items:center;height:26px;max-width:100%;font-size:14px;font-weight:600;line-height:1;color:var(--on);letter-spacing:-.03em;margin:2px 0 8px}
 .btk{flex:none;display:block;width:14.8px;height:26px}
 .btk path{fill:var(--ac)}.btk circle{fill:var(--card)}
@@ -50,29 +52,25 @@ input,textarea,button{letter-spacing:inherit;word-break:keep-all;overflow-wrap:b
 .snap .card{display:flex;flex-direction:column}.snap .card .ph,.snap .card .lk{margin:auto 0}
 .pd{position:absolute;left:8px;bottom:8px;border:0;border-radius:99px;background:#000b;color:#fff;font:inherit;font-size:12px;padding:5px 10px;cursor:pointer;letter-spacing:0;z-index:2}
 .face{position:absolute;top:28px;right:18px;width:var(--fs);height:var(--fs)}.fd{left:50%;bottom:4px;transform:translateX(-50%);font-size:11px;padding:2px 8px}
-.play{position:absolute;right:8px;bottom:8px;width:32px;height:32px;border-radius:50%;background:var(--ac);color:var(--on);display:flex;align-items:center;justify-content:center;font-size:13px;letter-spacing:0;z-index:2}
-.nm{font-family:inherit;font-weight:800;font-size:20px;margin:10px 4px 0;word-break:keep-all;overflow-wrap:break-word}
-.note{font-family:inherit;color:var(--sub);font-size:13px;margin:2px 4px 0;white-space:pre-wrap;word-break:keep-all;overflow-wrap:break-word}
-.card input,.card textarea{width:100%;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:8px;padding:7px 9px;font:inherit;font-size:14px;margin-top:6px}
+.card input,.card textarea{width:100%;border:none;background:var(--bg);color:var(--ink);border-radius:8px;padding:7px 9px;font:inherit;font-size:14px;margin-top:6px}
+.card input:focus,.card textarea:focus{outline:none}
 .card textarea{resize:none;height:54px}
 .bar{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}
-button.b{font:inherit;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:10px 14px;border-radius:99px;cursor:pointer}
-button.p{background:var(--ac);color:var(--on);border-color:var(--ac)}
-.sw{display:flex;gap:8px;align-items:center;margin-top:6px;flex-wrap:wrap}
-.sw i{width:28px;height:28px;border-radius:50%;cursor:pointer;border:2px solid var(--card);outline:1px solid var(--line)}
+button.b{font:inherit;border:none;background:var(--card);color:var(--ink);padding:10px 14px;border-radius:99px;cursor:pointer}
+button.p{background:var(--ac);color:var(--on);border:none}
 .view .edit{display:none}
 .hint{color:var(--sub);font-size:13px}
 .snap{width:800px;transform:none !important;margin:0 !important}.snap.c2{width:600px}.snap.c3 .grid{grid-template-columns:repeat(3,1fr)}
 #ov{position:fixed;inset:0;background:#000d;z-index:99;overflow:auto;padding:16px;text-align:center;color:#fff}#ov img{max-width:min(100%,480px);border-radius:8px}
-button:focus-visible,.ph:focus-visible,i:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
+button:focus-visible,.ph:focus-visible,i:focus-visible{outline:none}
 
 /* 사진 비율·위치 조정 페이지 */
 #crop-page{position:fixed;inset:0;background:var(--bg);z-index:120;display:none;flex-direction:column;align-items:center;justify-content:center;padding:20px 16px;overflow:auto}
-.crop-panel{width:100%;max-width:420px;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px}
+.crop-panel{width:100%;max-width:420px;background:var(--card);border:none;border-radius:20px;padding:18px}
 .crop-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px}
 .crop-title{font-weight:800;font-size:17px;margin:0}
 .crop-sub{color:var(--sub);font-size:12px;margin:2px 0 0}
-.crop-stage-wrap{width:100%;aspect-ratio:1/1;background:#000;border:1px solid var(--line);border-radius:12px;overflow:hidden;position:relative;touch-action:none;cursor:grab}
+.crop-stage-wrap{width:100%;aspect-ratio:1/1;background:#000;border:none;border-radius:12px;overflow:hidden;position:relative;touch-action:none;cursor:grab}
 .crop-stage-wrap:active{cursor:grabbing}
 .crop-stage-wrap canvas{width:100%;height:100%;display:block}
 .crop-ctrl{margin-top:14px}
@@ -209,7 +207,64 @@ function save(){try{localStorage.setItem('idolrecap',JSON.stringify(S))}catch(e)
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
 function isFree(l){return /파트|직캠|메세지/.test(l||'')}
 function ytid(u){var m=String(u||'').match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?(?:.*&)?v=|shorts\/|live\/|embed\/))([\w-]{11})/);return m?m[1]:''}
-function thHtml(u){var id=ytid(u);if(!id)return '';var b='https://img.youtube.com/vi/'+id+'/',a=' target="_blank" rel="noopener noreferrer">';return '<a href="'+b+'maxresdefault.jpg"'+a+'썸네일 열기</a><a href="'+b+'hqdefault.jpg"'+a+'안 열리면 이것</a>'}
+function thHtml(u){var id=ytid(u);if(!id)return '';var b='https://img.youtube.com/vi/'+id+'/',a=' target="_blank" rel="noopener noreferrer">';return '<a href="'+b+'maxresdefault.jpg"'+a+'썸네일 저장 후 업로드하기</a>'}
+
+/* 유튜브 링크 입력 시 카드 사진(c.i)이 비어 있으면 썸네일을 자동 채움 */
+function fetchYtThumbDataUrl(videoId){
+ return new Promise(function(resolve){
+  var urls=[
+   'https://img.youtube.com/vi/'+videoId+'/maxresdefault.jpg',
+   'https://img.youtube.com/vi/'+videoId+'/hqdefault.jpg'
+  ];
+  function tryAt(idx){
+   if(idx>=urls.length){resolve('');return}
+   var im=new Image();
+   im.crossOrigin='anonymous';
+   im.onload=function(){
+    if(im.naturalWidth<=120&&im.naturalHeight<=90){tryAt(idx+1);return}
+    try{
+     var c=document.createElement('canvas');
+     c.width=im.naturalWidth;
+     c.height=im.naturalHeight;
+     var x=c.getContext('2d');
+     x.imageSmoothingEnabled=true;
+     x.imageSmoothingQuality='high';
+     x.drawImage(im,0,0,c.width,c.height);
+     var dataUrl=c.toDataURL('image/jpeg',.94);
+     imgCache[dataUrl]=im;
+     resolve(dataUrl);
+    }catch(err){
+     resolve('');
+    }
+   };
+   im.onerror=function(){tryAt(idx+1)};
+   im.src=urls[idx];
+  }
+  tryAt(0);
+ });
+}
+
+var ytDebounce={};
+function autoFillYtThumb(cardIdx, url){
+ var id=ytid(url);
+ if(!id)return;
+ var card=S.cards[cardIdx];
+ if(!card||card.i)return;
+ if(ytDebounce[cardIdx])clearTimeout(ytDebounce[cardIdx]);
+ ytDebounce[cardIdx]=setTimeout(function(){
+  var latest=S.cards[cardIdx];
+  if(!latest||latest.i||ytid(latest.y)!==id)return;
+  fetchYtThumbDataUrl(id).then(function(thumbSrc){
+   if(!thumbSrc)return;
+   var cur=S.cards[cardIdx];
+   if(!cur||cur.i||ytid(cur.y)!==id)return;
+   cur.i=thumbSrc;
+   cur.t={scale:1,nx:0,ny:0};
+   save();
+   render();
+  });
+ },250);
+}
 
 /* 카드 상단 #올해의ooo 태그 HTML */
 function badgeHtml(label){
@@ -241,6 +296,7 @@ function loadCachedImage(src){
   if(!src){resolve(null);return}
   if(imgCache[src]&&imgCache[src].complete&&imgCache[src].naturalWidth){resolve(imgCache[src]);return}
   var im=new Image();
+  if(/^https?:/i.test(src))im.crossOrigin='anonymous';
   im.onload=function(){imgCache[src]=im;resolve(im)};
   im.onerror=function(){resolve(null)};
   im.src=src;
@@ -264,7 +320,7 @@ function paintCardCanvases(){
 function phv(c,k,hasImg){
  var ok=/^https?:\/\//i.test(c.y||'');
  var inner=hasImg?'<canvas class="p-cv" width="800" height="800" data-k="'+k+'"></canvas>':'<span>사진 추가</span>';
- var ph='<div class="ph" style="cursor:default">'+inner+(ok?'<span class="play">▶</span>':'')+'</div>';
+ var ph='<div class="ph" style="cursor:default">'+inner+'</div>';
  return ok?'<a class="lk" href="'+esc(c.y)+'" target="_blank" rel="noopener noreferrer">'+ph+'</a>':ph;
 }
 
@@ -433,7 +489,20 @@ function render(){
  syncScale();
 }
 
-$('g').addEventListener('input',function(e){var d=e.target.dataset;if(d.f){S.cards[d.k][d.f]=e.target.value;save();if(d.f==='y'){var t=e.target.parentNode.querySelector('.th');if(t)t.innerHTML=thHtml(e.target.value);syncScale()}}});
+$('g').addEventListener('input',function(e){
+ var d=e.target.dataset;
+ if(d.f){
+  var idx=+d.k;
+  S.cards[idx][d.f]=e.target.value;
+  save();
+  if(d.f==='y'){
+   var t=e.target.parentNode.querySelector('.th');
+   if(t)t.innerHTML=thHtml(e.target.value);
+   autoFillYtThumb(idx,e.target.value);
+   syncScale();
+  }
+ }
+});
 
 $('g').addEventListener('click',function(e){
  var d=e.target.dataset;
@@ -479,7 +548,7 @@ $('fc').onclick=function(e){if(view)return;if(e.target.dataset.fd){S.face='';sav
 $('fc').onkeydown=function(e){if(e.key==='Enter'&&!view&&!e.target.dataset.fd)pickFace()};
 $('tg').onclick=function(){view=!view;render()};
 
-/* 이미지 저장: 모든 카드 캔버스(1200x1200)가 완전히 그려진 뒤 scale:3 및 1620x1620 고해상도로 캡처 */
+/* 이미지 저장: 1번 코드 방식 #cap 캡처 후 1620x1620 정사각형 출력, 박스 전체 y축 +10px 하향 */
 $('sv').onclick=function(){
  var was=view;view=true;render();
  if(!window.html2canvas){alert('이미지 저장을 불러오지 못했어요. 화면을 캡처해 주세요.');view=was;render();return}
@@ -511,7 +580,7 @@ $('sv').onclick=function(){
   x.imageSmoothingQuality='high';
   x.fillStyle=bg;x.fillRect(0,0,outSize,outSize);
   var s=Math.min(outSize/c.width,outSize/c.height),wOut=c.width*s,hOut=c.height*s;
-  x.drawImage(c,(outSize-wOut)/2,(outSize-hOut)/2,wOut,hOut);
+  x.drawImage(c,(outSize-wOut)/2,(outSize-hOut)/2+10,wOut,hOut);
   var d=document.createElement('div');d.id='ov';
   d.innerHTML='<p>1:1 정사각형 고화질 이미지예요. 길게 눌러 저장하세요. 닫으려면 바깥을 눌러요.</p><img alt="리캡 이미지" src="'+o.toDataURL('image/png')+'">';
   d.onclick=function(e){if(e.target!==d.querySelector('img'))d.remove()};
