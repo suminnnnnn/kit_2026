@@ -9,8 +9,8 @@ box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:en
 
 
 *{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,system-ui,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;line-height:1.5;letter-spacing:-.05em}
-input,textarea,button{letter-spacing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,system-ui,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;line-height:1.5;letter-spacing:-.05em;word-break:keep-all;overflow-wrap:break-word}
+input,textarea,button{letter-spacing:inherit;word-break:keep-all;overflow-wrap:break-word}
 #stage{width:100%;overflow:hidden;display:flex;justify-content:center}
 .wrap{width:520px;flex:none;padding:16px;transform-origin:top left}
 #intro{min-height:85vh;display:flex;flex-direction:column;justify-content:center;padding:20px 4px}
@@ -25,7 +25,7 @@ input,textarea,button{letter-spacing:inherit}
 .start-btn{width:100%;margin-top:10px;padding:15px;font-weight:800;font-size:16px}
 #cap{background:var(--bg);padding:8px 4px 20px}
 .hero{padding:28px 18px 22px;border-radius:22px;background:var(--ac);color:var(--on);margin-bottom:18px;position:relative;--fs:128px;min-height:calc(var(--fs) + 50px);display:flex;align-items:center}
-.tv{flex:1;min-width:0;font-weight:800;font-size:36px;line-height:1.12;padding-right:calc(var(--fs) + 10px);margin-top:0;transform:translate(0,-5px)}
+.tv{flex:1;min-width:0;font-weight:800;font-size:36px;line-height:1.12;padding-right:calc(var(--fs) + 10px);margin-top:0;transform:translate(0,-5px);word-break:keep-all;overflow-wrap:break-word}
 .tv .l1{white-space:nowrap}
 .tv .l2{display:flex;align-items:center;flex-wrap:wrap;gap:6px .4em}
 .tag{display:inline-flex;align-items:center;height:1.01em;max-width:100%;font-size:1em;font-weight:800;line-height:1;color:var(--onr);letter-spacing:-.03em;transform:translateY(calc(.15em - 1px))}
@@ -36,22 +36,23 @@ input,textarea,button{letter-spacing:inherit}
 .hero.nf .tv{padding-right:0}
 .face{flex:none;width:96px;height:96px;border-radius:50%;background:#0001;border:3px solid var(--on);overflow:hidden;display:flex;align-items:center;justify-content:center;color:var(--on);font-size:12px;line-height:1.3;text-align:center;cursor:pointer}
 .face img{width:100%;height:100%;object-fit:cover}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;grid-auto-flow:row dense}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:8px 8px 12px;position:relative}
-.card.wide{grid-column:1/-1}
-.badge{display:inline-block;background:var(--ac);color:var(--on);border-radius:99px;padding:2px 10px 2px;line-height:1.4;font-size:13px;margin:2px 0 8px;max-width:100%}
-.ph{aspect-ratio:3/4;border-radius:8px;background:#000;display:flex;align-items:center;justify-content:center;overflow:hidden;color:var(--sub);font-size:13px;cursor:pointer;text-align:center}
-.card.wide .ph{aspect-ratio:16/9}
-.ph img{width:100%;height:100%;object-fit:contain;background:#000}
-.ph{position:relative}.lk{display:block;text-decoration:none;color:inherit}
+.badge{display:inline-flex;align-items:center;height:26px;max-width:100%;font-size:14px;font-weight:600;line-height:1;color:var(--on);letter-spacing:-.03em;margin:2px 0 8px}
+.btk{flex:none;display:block;width:14.8px;height:26px}
+.btk path{fill:var(--ac)}.btk circle{fill:var(--card)}
+.btb{display:flex;align-items:center;height:100%;min-width:0;margin-left:-1px;padding:0 11px 0 8px;background:var(--ac);border-radius:0 5px 5px 0;white-space:nowrap;overflow:hidden}
+.btb span{display:block;overflow:hidden;text-overflow:ellipsis;transform:translate(-1px,-.5px)}
+.ph{aspect-ratio:1/1;border-radius:8px;background:#000;display:flex;align-items:center;justify-content:center;overflow:hidden;color:var(--sub);font-size:13px;cursor:pointer;text-align:center;position:relative}
+.ph canvas.p-cv{width:100%;height:100%;display:block;background:#000}
+.lk{display:block;text-decoration:none;color:inherit}
 .th{display:flex;gap:10px;flex-wrap:wrap;margin:6px 4px 0;font-size:12px}.th a{color:var(--ac)}
-.card.fr{grid-column:1/-1}.card.fr .ph{aspect-ratio:16/9}
-.snap .card.fr{grid-column:auto;display:flex;flex-direction:column}.snap .card.fr .ph,.snap .card.fr .lk{margin:auto 0}
+.snap .card{display:flex;flex-direction:column}.snap .card .ph,.snap .card .lk{margin:auto 0}
 .pd{position:absolute;left:8px;bottom:8px;border:0;border-radius:99px;background:#000b;color:#fff;font:inherit;font-size:12px;padding:5px 10px;cursor:pointer;letter-spacing:0;z-index:2}
 .face{position:absolute;top:28px;right:18px;width:var(--fs);height:var(--fs)}.fd{left:50%;bottom:4px;transform:translateX(-50%);font-size:11px;padding:2px 8px}
-.play{position:absolute;right:8px;bottom:8px;width:32px;height:32px;border-radius:50%;background:var(--ac);color:var(--on);display:flex;align-items:center;justify-content:center;font-size:13px;letter-spacing:0}
-.nm{font-family:inherit;font-weight:800;font-size:20px;margin:10px 4px 0;word-break:keep-all}
-.note{font-family:inherit;color:var(--sub);font-size:13px;margin:2px 4px 0;white-space:pre-wrap}
+.play{position:absolute;right:8px;bottom:8px;width:32px;height:32px;border-radius:50%;background:var(--ac);color:var(--on);display:flex;align-items:center;justify-content:center;font-size:13px;letter-spacing:0;z-index:2}
+.nm{font-family:inherit;font-weight:800;font-size:20px;margin:10px 4px 0;word-break:keep-all;overflow-wrap:break-word}
+.note{font-family:inherit;color:var(--sub);font-size:13px;margin:2px 4px 0;white-space:pre-wrap;word-break:keep-all;overflow-wrap:break-word}
 .card input,.card textarea{width:100%;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:8px;padding:7px 9px;font:inherit;font-size:14px;margin-top:6px}
 .card textarea{resize:none;height:54px}
 .bar{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}
@@ -61,9 +62,24 @@ button.p{background:var(--ac);color:var(--on);border-color:var(--ac)}
 .sw i{width:28px;height:28px;border-radius:50%;cursor:pointer;border:2px solid var(--card);outline:1px solid var(--line)}
 .view .edit{display:none}
 .hint{color:var(--sub);font-size:13px}
-.snap{width:800px;transform:none !important;margin:0 !important}.snap.c2{width:600px}.snap.c3 .grid{grid-template-columns:repeat(3,1fr)}.snap .card.wide{grid-column:auto}.snap .card.wide .ph{aspect-ratio:3/4}
+.snap{width:800px;transform:none !important;margin:0 !important}.snap.c2{width:600px}.snap.c3 .grid{grid-template-columns:repeat(3,1fr)}
 #ov{position:fixed;inset:0;background:#000d;z-index:99;overflow:auto;padding:16px;text-align:center;color:#fff}#ov img{max-width:min(100%,480px);border-radius:8px}
 button:focus-visible,.ph:focus-visible,i:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
+
+/* 사진 비율·위치 조정 페이지 */
+#crop-page{position:fixed;inset:0;background:var(--bg);z-index:120;display:none;flex-direction:column;align-items:center;justify-content:center;padding:20px 16px;overflow:auto}
+.crop-panel{width:100%;max-width:420px;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px}
+.crop-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px}
+.crop-title{font-weight:800;font-size:17px;margin:0}
+.crop-sub{color:var(--sub);font-size:12px;margin:2px 0 0}
+.crop-stage-wrap{width:100%;aspect-ratio:1/1;background:#000;border:1px solid var(--line);border-radius:12px;overflow:hidden;position:relative;touch-action:none;cursor:grab}
+.crop-stage-wrap:active{cursor:grabbing}
+.crop-stage-wrap canvas{width:100%;height:100%;display:block}
+.crop-ctrl{margin-top:14px}
+.crop-row{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:13px;color:var(--sub);margin-bottom:6px}
+.crop-ctrl input[type="range"]{width:100%;accent-color:var(--ac);cursor:pointer}
+.crop-actions{display:flex;gap:8px;margin-top:16px}
+.crop-actions button{flex:1;padding:11px 12px;font-weight:700}
 </style></head><body>
 <div id="stage">
 <div class="wrap" id="wrap">
@@ -91,7 +107,6 @@ button:focus-visible,.ph:focus-visible,i:focus-visible{outline:2px solid var(--a
     </div><div class="grid" id="g"></div></div>
     <div class="bar">
     <button class="b p" id="tg">완성본 보기</button>
-    <button class="b" id="add">+ 항목 추가</button>
     <button class="b" id="sv">이미지로 저장</button>
     </div>
     <div class="edit-only" id="ctl">
@@ -99,21 +114,81 @@ button:focus-visible,.ph:focus-visible,i:focus-visible{outline:2px solid var(--a
   </div>
 </div>
 </div>
+
+<!-- 사진 정사각형 프레임 조정 페이지 -->
+<div id="crop-page" role="dialog" aria-modal="true" aria-labelledby="crop-title-el">
+  <div class="crop-panel">
+    <div class="crop-head">
+      <div>
+        <h2 class="crop-title" id="crop-title-el">사진 비율 · 위치 조정</h2>
+        <p class="crop-sub">정사각형 안에서 드래그해 위치를 맞추고 배율을 조절하세요. 여백은 검정으로 채워집니다.</p>
+      </div>
+      <button type="button" class="b" id="crop-repick">다른 사진</button>
+    </div>
+    <div class="crop-stage-wrap" id="crop-box">
+      <canvas id="crop-canvas" width="900" height="900"></canvas>
+    </div>
+    <div class="crop-ctrl">
+      <div class="crop-row">
+        <span>크기 조정</span>
+        <span id="crop-scale-val">100%</span>
+      </div>
+      <input type="range" id="crop-zoom" min="0.3" max="3" step="0.01" value="1">
+    </div>
+    <div class="crop-actions">
+      <button type="button" class="b" id="crop-cancel">취소</button>
+      <button type="button" class="b p" id="crop-confirm">확인</button>
+    </div>
+  </div>
+</div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script>
-var SH=['헤메코','파트','모에화','라이브','무대','메세지'];
-var DEF=['#올해의 헤메코','#올해의 파트','#올해의 모에화','#올해의 라이브','#올해의 무대','#올해의 직캠','#올해의 메세지'];
-var OLD=['올해의 헤메코','올해의 남자','올해의 무대','올해의 직캠','올해의 앨범','올해의 순간'];
-var S={v:6,title:'2026 My\nK-pop tags',nick:'',fav:'',ac:'#ffb997',cards:DEF.map(function(l){return{l:l,n:'',o:'',i:''}})};
-try{var raw=localStorage.getItem('idolrecap');if(raw){S=JSON.parse(raw);
- if(!S.v||S.v<2){S.cards=S.cards.filter(function(c){return !(OLD.indexOf(c.l)>-1&&!c.n&&!c.o&&!c.i)});
-  DEF.forEach(function(l){if(!S.cards.some(function(c){return c.l===l}))S.cards.push({l:l,n:'',o:'',i:''})});S.v=2}
- if(S.v<3){S.ac='#ffb997';S.v=3}
- if(S.v<4){S.title='2026 my kpop tags';S.cards.forEach(function(c){var j=SH.indexOf(c.l);if(j>-1)c.l=DEF[j]});S.v=4}
- if(S.v<5){S.title='2026 My\nK-pop tags';S.v=5}
- if(S.v<6){if(!S.cards.some(function(c){return /직캠/.test(c.l)})){var mi=-1;S.cards.forEach(function(c,i){if(/메세지/.test(c.l))mi=i});var nc={l:'#올해의 직캠',n:'',o:'',i:'',y:''};if(mi<0)S.cards.push(nc);else S.cards.splice(mi,0,nc)}S.v=6}}}catch(e){}
+var DEF=['#올해의 헤메코','#올해의 파트','#올해의 모에화','#올해의 라이브','#올해의 직캠','#올해의 메세지'];
+function makeEmptyCard(label){return{l:label,n:'',o:'',i:'',y:'',t:null}}
+var S={v:9,title:'2026 My\nK-pop tags',nick:'',fav:'',ac:'#ffb997',cards:DEF.map(makeEmptyCard)};
+
+function normalizeCards(list){
+ var arr=Array.isArray(list)?list:[];
+ return DEF.map(function(targetLabel){
+  var key=targetLabel.replace(/^#올해의\s*/,'');
+  var found=arr.find(function(c){
+   if(!c||typeof c.l!=='string')return false;
+   return c.l===targetLabel||c.l.replace(/^#올해의\s*/,'')===key;
+  });
+  if(found){
+   return{
+    l:targetLabel,
+    n:found.n||'',
+    o:found.o||'',
+    i:found.i||'',
+    y:found.y||'',
+    t:found.t||null
+   };
+  }
+  return makeEmptyCard(targetLabel);
+ });
+}
+
+try{
+ var raw=localStorage.getItem('idolrecap');
+ if(raw){
+  var parsed=JSON.parse(raw);
+  if(parsed&&typeof parsed==='object'){
+   S.nick=parsed.nick||'';
+   S.fav=parsed.fav||'';
+   S.ac='#ffb997';
+   S.face=parsed.face||'';
+   S.cards=normalizeCards(parsed.cards);
+   S.v=9;
+   localStorage.setItem('idolrecap',JSON.stringify(S));
+  }
+ }
+}catch(e){}
+
 S.title='2026 My\nK-pop tags';
-if(!Array.isArray(S.cards)||!S.cards.length){S.cards=DEF.map(function(l){return{l:l,n:'',o:'',i:''}})}
+S.cards=normalizeCards(S.cards);
+
 var view=false,$=function(i){return document.getElementById(i)};
 function syncScale(){
  var st=$('stage'),w=$('wrap');if(!st||!w)return;
@@ -135,8 +210,199 @@ function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;
 function isFree(l){return /파트|직캠|메세지/.test(l||'')}
 function ytid(u){var m=String(u||'').match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?(?:.*&)?v=|shorts\/|live\/|embed\/))([\w-]{11})/);return m?m[1]:''}
 function thHtml(u){var id=ytid(u);if(!id)return '';var b='https://img.youtube.com/vi/'+id+'/',a=' target="_blank" rel="noopener noreferrer">';return '<a href="'+b+'maxresdefault.jpg"'+a+'썸네일 열기</a><a href="'+b+'hqdefault.jpg"'+a+'안 열리면 이것</a>'}
-function phv(c,img){var ok=/^https?:\/\//i.test(c.y||''),ph='<div class="ph" style="cursor:default">'+img+(ok?'<span class="play">▶</span>':'')+'</div>';
- return ok?'<a class="lk" href="'+esc(c.y)+'" target="_blank" rel="noopener noreferrer">'+ph+'</a>':ph}
+
+/* 카드 상단 #올해의ooo 태그 HTML */
+function badgeHtml(label){
+ return '<span class="badge"><svg class="btk" viewBox="3.7 0 56.3 100" aria-hidden="true"><path d="M60,0 L53.73,0 A9,9 0 0 0 47.36,2.64 L6.36,43.64 A9,9 0 0 0 6.36,56.36 L47.36,97.36 A9,9 0 0 0 53.73,100 L60,100 Z"/><circle cx="36" cy="50" r="6.2"/></svg><span class="btb"><span>'+esc(label)+'</span></span></span>';
+}
+
+/* 정사각형 프레임 내에 이미지(src)와 변환 정보(t: {scale, nx, ny})를 고화질 보간으로 그리는 공통 함수 */
+function drawSquareTransform(ctx, im, size, t){
+ ctx.imageSmoothingEnabled=true;
+ ctx.imageSmoothingQuality='high';
+ ctx.fillStyle='#000';
+ ctx.fillRect(0,0,size,size);
+ if(!im||!im.width||!im.height)return;
+ var tr=t||{scale:1,nx:0,ny:0};
+ var base=Math.min(size/im.width,size/im.height);
+ var sc=(typeof tr.scale==='number'&&tr.scale>0)?tr.scale:1;
+ var dw=im.width*base*sc;
+ var dh=im.height*base*sc;
+ var ox=(typeof tr.nx==='number'?tr.nx:0)*size;
+ var oy=(typeof tr.ny==='number'?tr.ny:0)*size;
+ var dx=(size-dw)/2+ox;
+ var dy=(size-dh)/2+oy;
+ ctx.drawImage(im,dx,dy,dw,dh);
+}
+
+var imgCache={};
+function loadCachedImage(src){
+ return new Promise(function(resolve){
+  if(!src){resolve(null);return}
+  if(imgCache[src]&&imgCache[src].complete&&imgCache[src].naturalWidth){resolve(imgCache[src]);return}
+  var im=new Image();
+  im.onload=function(){imgCache[src]=im;resolve(im)};
+  im.onerror=function(){resolve(null)};
+  im.src=src;
+ });
+}
+
+function paintCardCanvases(){
+ var list=[].slice.call(document.querySelectorAll('canvas.p-cv'));
+ return Promise.all(list.map(function(cv){
+  var k=+cv.dataset.k;
+  var c=S.cards[k];
+  if(!c||!c.i)return Promise.resolve();
+  return loadCachedImage(c.i).then(function(im){
+   if(!im)return;
+   var x=cv.getContext('2d');
+   drawSquareTransform(x,im,cv.width,c.t);
+  });
+ }));
+}
+
+function phv(c,k,hasImg){
+ var ok=/^https?:\/\//i.test(c.y||'');
+ var inner=hasImg?'<canvas class="p-cv" width="800" height="800" data-k="'+k+'"></canvas>':'<span>사진 추가</span>';
+ var ph='<div class="ph" style="cursor:default">'+inner+(ok?'<span class="play">▶</span>':'')+'</div>';
+ return ok?'<a class="lk" href="'+esc(c.y)+'" target="_blank" rel="noopener noreferrer">'+ph+'</a>':ph;
+}
+
+/* 사진 조정 페이지 상태 */
+var cropState={
+ cardIdx:null,
+ src:'',
+ img:null,
+ scale:1,
+ nx:0,
+ ny:0,
+ dragging:false,
+ lastX:0,
+ lastY:0
+};
+
+function renderCropCanvas(){
+ var cv=$('crop-canvas');
+ if(!cv)return;
+ var ctx=cv.getContext('2d');
+ drawSquareTransform(ctx,cropState.img,cv.width,{
+  scale:cropState.scale,
+  nx:cropState.nx,
+  ny:cropState.ny
+ });
+ $('crop-zoom').value=String(cropState.scale);
+ $('crop-scale-val').textContent=Math.round(cropState.scale*100)+'%';
+}
+
+function openCropPage(cardIdx,src,existingTransform){
+ var card=S.cards[cardIdx];
+ $('crop-title-el').textContent=(card&&card.l?card.l+' · ':'')+'사진 조정';
+ cropState.cardIdx=cardIdx;
+ cropState.src=src;
+ cropState.scale=(existingTransform&&typeof existingTransform.scale==='number')?existingTransform.scale:1;
+ cropState.nx=(existingTransform&&typeof existingTransform.nx==='number')?existingTransform.nx:0;
+ cropState.ny=(existingTransform&&typeof existingTransform.ny==='number')?existingTransform.ny:0;
+ cropState.dragging=false;
+ loadCachedImage(src).then(function(im){
+  cropState.img=im;
+  $('crop-page').style.display='flex';
+  renderCropCanvas();
+ });
+}
+
+function closeCropPage(){
+ $('crop-page').style.display='none';
+ cropState.dragging=false;
+ cropState.cardIdx=null;
+}
+
+function selectPhotoFile(cardIdx){
+ var f=document.createElement('input');
+ f.type='file';
+ f.accept='image/*';
+ f.onchange=function(){
+  if(!f.files||!f.files[0])return;
+  var r=new FileReader();
+  r.onload=function(){
+   var im=new Image();
+   im.onload=function(){
+    var maxSide=2000;
+    var s=Math.min(1,maxSide/Math.max(im.width,im.height));
+    var c=document.createElement('canvas');
+    c.width=Math.max(1,Math.round(im.width*s));
+    c.height=Math.max(1,Math.round(im.height*s));
+    var x=c.getContext('2d');
+    x.imageSmoothingEnabled=true;
+    x.imageSmoothingQuality='high';
+    x.drawImage(im,0,0,c.width,c.height);
+    var dataUrl=c.toDataURL('image/jpeg',.94);
+    imgCache[dataUrl]=im;
+    openCropPage(cardIdx,dataUrl,{scale:1,nx:0,ny:0});
+   };
+   im.src=r.result;
+  };
+  r.readAsDataURL(f.files[0]);
+ };
+ f.click();
+}
+
+$('crop-zoom').addEventListener('input',function(){
+ cropState.scale=parseFloat(this.value)||1;
+ renderCropCanvas();
+});
+
+$('crop-repick').addEventListener('click',function(){
+ if(cropState.cardIdx!==null)selectPhotoFile(cropState.cardIdx);
+});
+
+$('crop-cancel').addEventListener('click',closeCropPage);
+
+$('crop-confirm').addEventListener('click',function(){
+ if(cropState.cardIdx===null)return;
+ var idx=cropState.cardIdx;
+ S.cards[idx].i=cropState.src;
+ S.cards[idx].t={
+  scale:cropState.scale,
+  nx:cropState.nx,
+  ny:cropState.ny
+ };
+ save();
+ closeCropPage();
+ render();
+});
+
+(function bindCropDrag(){
+ var box=$('crop-box');
+ function startDrag(clientX,clientY){
+  cropState.dragging=true;
+  cropState.lastX=clientX;
+  cropState.lastY=clientY;
+ }
+ function moveDrag(clientX,clientY){
+  if(!cropState.dragging)return;
+  var rect=box.getBoundingClientRect();
+  if(!rect.width)return;
+  var dx=clientX-cropState.lastX;
+  var dy=clientY-cropState.lastY;
+  cropState.lastX=clientX;
+  cropState.lastY=clientY;
+  cropState.nx+=dx/rect.width;
+  cropState.ny+=dy/rect.height;
+  renderCropCanvas();
+ }
+ function endDrag(){cropState.dragging=false}
+
+ box.addEventListener('pointerdown',function(e){
+  e.preventDefault();
+  box.setPointerCapture(e.pointerId);
+  startDrag(e.clientX,e.clientY);
+ });
+ box.addEventListener('pointermove',function(e){
+  moveDrag(e.clientX,e.clientY);
+ });
+ box.addEventListener('pointerup',endDrag);
+ box.addEventListener('pointercancel',endDrag);
+})();
 
 function startRecap(){
  S.nick=$('in-nick').value.trim();
@@ -156,53 +422,106 @@ function render(){
  $('fc').innerHTML=S.face?'<img src="'+S.face+'" alt="최애 얼굴">'+(view?'':'<button class="pd fd" data-fd="1" aria-label="얼굴 사진 지우기">지우기</button>'):'<span>최애<br>얼굴</span>';
  $('fc').style.display=(view&&!S.face)?'none':'';$('fc').style.cursor=view?'default':'pointer';
  document.querySelector('.hero').classList.toggle('nf',view&&!S.face);$('ctl').style.display=view?'none':'';
- $('add').style.display=view?'none':'';
  $('tg').textContent=view?'수정하기':'완성본 보기';
  $('g').innerHTML=S.cards.map(function(c,k){
-  var fr=isFree(c.l),wide=fr?' fr':((S.cards.length%2&&k===S.cards.length-1)?' wide':'');
-  var img=c.i?'<img src="'+c.i+'" alt="">':'<span>사진 추가</span>';
-  if(view)return '<div class="card'+wide+'"><span class="badge">'+esc(c.l)+'</span>'+phv(c,img)+'</div>';
-  return '<div class="card'+wide+'"><span class="badge">'+esc(c.l)+'</span><div class="ph" tabindex="0" data-p="'+k+'">'+img+(c.i?'<button class="pd" data-pd="'+k+'" aria-label="사진 지우기">사진 지우기</button>':'')+'</div><input data-f="y" data-k="'+k+'" inputmode="url" placeholder="유튜브 링크 (선택)" aria-label="유튜브 링크" value="'+esc(c.y||'')+'"><div class="th">'+thHtml(c.y)+'</div></div>';
+  var hasImg=Boolean(c.i);
+  if(view)return '<div class="card">'+badgeHtml(c.l)+phv(c,k,hasImg)+'</div>';
+  var inner=hasImg?'<canvas class="p-cv" width="800" height="800" data-k="'+k+'"></canvas>':'<span>사진 추가</span>';
+  return '<div class="card">'+badgeHtml(c.l)+'<div class="ph" tabindex="0" data-p="'+k+'">'+inner+(hasImg?'<button class="pd" data-pd="'+k+'" aria-label="사진 지우기">사진 지우기</button>':'')+'</div><input data-f="y" data-k="'+k+'" inputmode="url" placeholder="유튜브 링크 (선택)" aria-label="유튜브 링크" value="'+esc(c.y||'')+'"><div class="th">'+thHtml(c.y)+'</div></div>';
  }).join('');
+ paintCardCanvases();
  syncScale();
 }
+
 $('g').addEventListener('input',function(e){var d=e.target.dataset;if(d.f){S.cards[d.k][d.f]=e.target.value;save();if(d.f==='y'){var t=e.target.parentNode.querySelector('.th');if(t)t.innerHTML=thHtml(e.target.value);syncScale()}}});
+
 $('g').addEventListener('click',function(e){
  var d=e.target.dataset;
- if(d.pd!==undefined){S.cards[+d.pd].i='';save();render();return}
- var p=e.target.closest('[data-p]');if(p&&!view)pick(+p.dataset.p)});
-$('g').addEventListener('keydown',function(e){if(e.key==='Enter'&&e.target.dataset.pd===undefined){var p=e.target.closest('[data-p]');if(p)pick(+p.dataset.p)}});
-function pick(k){
+ if(d.pd!==undefined){S.cards[+d.pd].i='';S.cards[+d.pd].t=null;save();render();return}
+ var p=e.target.closest('[data-p]');
+ if(p&&!view){
+  var idx=+p.dataset.p;
+  var card=S.cards[idx];
+  if(card&&card.i){
+   openCropPage(idx,card.i,card.t);
+  }else{
+   selectPhotoFile(idx);
+  }
+ }
+});
+
+$('g').addEventListener('keydown',function(e){
+ if(e.key==='Enter'&&e.target.dataset.pd===undefined){
+  var p=e.target.closest('[data-p]');
+  if(p&&!view){
+   var idx=+p.dataset.p;
+   var card=S.cards[idx];
+   if(card&&card.i)openCropPage(idx,card.i,card.t);
+   else selectPhotoFile(idx);
+  }
+ }
+});
+
+function pickFace(){
  var f=document.createElement('input');f.type='file';f.accept='image/*';
- f.onchange=function(){var r=new FileReader();r.onload=function(){var im=new Image();im.onload=function(){
-  var m=isFree(S.cards[k].l)?1200:800,s=Math.min(1,m/Math.max(im.width,im.height)),c=document.createElement('canvas');
-  c.width=Math.max(1,Math.round(im.width*s));c.height=Math.max(1,Math.round(im.height*s));c.getContext('2d').drawImage(im,0,0,c.width,c.height);
-  S.cards[k].i=c.toDataURL('image/jpeg',.82);save();render()};im.src=r.result};r.readAsDataURL(f.files[0])};
- f.click()}
-function pickFace(){var f=document.createElement('input');f.type='file';f.accept='image/*';
- f.onchange=function(){var r=new FileReader();r.onload=function(){var im=new Image();im.onload=function(){
-  var m=Math.min(im.width,im.height),z=Math.min(300,m),c=document.createElement('canvas');c.width=c.height=z;
-  c.getContext('2d').drawImage(im,(im.width-m)/2,(im.height-m)*.3,m,m,0,0,z,z);
-  S.face=c.toDataURL('image/jpeg',.85);save();render()};im.src=r.result};r.readAsDataURL(f.files[0])};f.click()}
+ f.onchange=function(){
+  if(!f.files||!f.files[0])return;
+  var r=new FileReader();r.onload=function(){var im=new Image();im.onload=function(){
+   var m=Math.min(im.width,im.height),z=Math.min(600,m),c=document.createElement('canvas');c.width=c.height=z;
+   var x=c.getContext('2d');
+   x.imageSmoothingEnabled=true;
+   x.imageSmoothingQuality='high';
+   x.drawImage(im,(im.width-m)/2,(im.height-m)*.3,m,m,0,0,z,z);
+   S.face=c.toDataURL('image/jpeg',.94);save();render()};im.src=r.result};r.readAsDataURL(f.files[0])};
+ f.click()
+}
 $('fc').onclick=function(e){if(view)return;if(e.target.dataset.fd){S.face='';save();render();return}pickFace()};
 $('fc').onkeydown=function(e){if(e.key==='Enter'&&!view&&!e.target.dataset.fd)pickFace()};
-$('add').onclick=function(){S.cards.push({l:'#올해의 ',n:'',o:'',i:''});save();render()};
 $('tg').onclick=function(){view=!view;render()};
+
+/* 이미지 저장: 모든 카드 캔버스(1200x1200)가 완전히 그려진 뒤 scale:3 및 1620x1620 고해상도로 캡처 */
 $('sv').onclick=function(){
  var was=view;view=true;render();
  if(!window.html2canvas){alert('이미지 저장을 불러오지 못했어요. 화면을 캡처해 주세요.');view=was;render();return}
- var cap=$('cap'),bg=getComputedStyle(document.body).backgroundColor;
+ var st=$('stage'),w=$('wrap'),cap=$('cap'),bg=getComputedStyle(document.body).backgroundColor;
+ var prevStageDisplay=st.style.display,prevStageHeight=st.style.height,prevWrapTransform=w.style.transform;
+ st.style.display='block';
+ st.style.height='auto';
+ w.style.transform='none';
  cap.classList.add('snap',S.cards.length>4?'c3':'c2');
- function done(){cap.classList.remove('snap','c2','c3');view=was;render()}
- html2canvas(cap,{backgroundColor:bg,scale:2}).then(function(c){
-  var o=document.createElement('canvas');o.width=1080;o.height=1080;var x=o.getContext('2d');
-  x.fillStyle=bg;x.fillRect(0,0,1080,1080);
-  var s=Math.min(1080/c.width,1080/c.height),w=c.width*s,h=c.height*s;
-  x.drawImage(c,(1080-w)/2,(1080-h)/2,w,h);
+
+ var cvs=[].slice.call(cap.querySelectorAll('canvas.p-cv'));
+ cvs.forEach(function(cv){cv.width=1200;cv.height=1200});
+
+ function restore(){
+  cap.classList.remove('snap','c2','c3');
+  w.style.transform=prevWrapTransform;
+  st.style.display=prevStageDisplay;
+  st.style.height=prevStageHeight;
+  view=was;
+  render();
+ }
+
+ paintCardCanvases().then(function(){
+  return html2canvas(cap,{backgroundColor:bg,scale:3,useCORS:true,logging:false});
+ }).then(function(c){
+  var outSize=1620;
+  var o=document.createElement('canvas');o.width=outSize;o.height=outSize;var x=o.getContext('2d');
+  x.imageSmoothingEnabled=true;
+  x.imageSmoothingQuality='high';
+  x.fillStyle=bg;x.fillRect(0,0,outSize,outSize);
+  var s=Math.min(outSize/c.width,outSize/c.height),wOut=c.width*s,hOut=c.height*s;
+  x.drawImage(c,(outSize-wOut)/2,(outSize-hOut)/2,wOut,hOut);
   var d=document.createElement('div');d.id='ov';
-  d.innerHTML='<p>1:1 정사각형 이미지예요. 길게 눌러 저장하세요. 닫으려면 바깥을 눌러요.</p><img alt="리캡 이미지" src="'+o.toDataURL('image/png')+'">';
+  d.innerHTML='<p>1:1 정사각형 고화질 이미지예요. 길게 눌러 저장하세요. 닫으려면 바깥을 눌러요.</p><img alt="리캡 이미지" src="'+o.toDataURL('image/png')+'">';
   d.onclick=function(e){if(e.target!==d.querySelector('img'))d.remove()};
-  document.body.appendChild(d);done()}).catch(function(){alert('저장에 실패했어요. 화면을 캡처해 주세요.');done()})};
+  document.body.appendChild(d);
+  restore();
+ }).catch(function(){
+  alert('저장에 실패했어요. 화면을 캡처해 주세요.');
+  restore();
+ });
+};
 
 /* 새로고침하면 항상 첫 화면(intro)부터 시작. 카드/사진 데이터는 그대로 유지되고, 이름만 입력칸에 미리 채워줌 */
 $('in-nick').value=S.nick||'';
