@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>2026 My K-pop tags</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{--bg:#000;--card:#141211;--ink:#f6f1ee;--sub:#a59d97;--line:#2e2a28;--ac:#ffb997;--on:#1b1512;--onr:#fff;color-scheme:dark;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+
+
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,system-ui,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;line-height:1.5;letter-spacing:-.05em}
+input,textarea,button{letter-spacing:inherit}
+.wrap{max-width:520px;margin:0 auto;padding:16px}
+#intro{min-height:85vh;display:flex;flex-direction:column;justify-content:center;padding:20px 4px}
+.intro-box{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px 20px}
+.intro-badge{display:inline-block;background:var(--ac);color:var(--on);font-weight:800;font-size:13px;padding:3px 12px 5px;border-radius:99px;margin-bottom:14px}
+.intro-title{font-weight:800;font-size:32px;line-height:1.15;margin:0 0 8px}
+.intro-sub{color:var(--sub);font-size:14px;margin:0 0 24px}
+.fld{margin-bottom:14px}
+.fld label{display:block;font-size:13px;color:var(--sub);margin-bottom:6px}
+.fld input{width:100%;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:12px;padding:13px 14px;font:inherit;font-size:16px}
+.fld input:focus{outline:2px solid var(--ac);border-color:transparent}
+.start-btn{width:100%;margin-top:10px;padding:15px;font-weight:800;font-size:16px}
+#cap{background:var(--bg);padding:8px 4px 20px}
+.hero{padding:28px 18px 22px;border-radius:22px;background:var(--ac);color:var(--on);margin-bottom:18px;position:relative;--fs:128px;min-height:calc(var(--fs) + 50px);display:flex;align-items:center}
+.tv{flex:1;min-width:0;font-weight:800;font-size:min(36px,calc((100vw - 206px)/4.9));line-height:1.12;padding-right:calc(var(--fs) + 10px);margin-top:0;transform:translate(0,-5px)}
+.tv .l1{white-space:nowrap}
+.tv .l2{display:flex;align-items:center;flex-wrap:wrap;gap:6px .4em}
+.tag{display:inline-flex;align-items:center;height:1.01em;max-width:100%;font-size:1em;font-weight:800;line-height:1;color:var(--onr);letter-spacing:-.03em;transform:translateY(calc(.15em - 1px))}
+.tk{flex:none;display:block;width:.569em;height:1.01em}
+.tk path{fill:var(--on)}.tk circle{fill:var(--ac)}
+.tb{display:flex;align-items:center;height:100%;min-width:0;margin-left:-1px;font-weight:600;padding:0 .65em 0 .54em;background:var(--on);border-radius:0 .182em .182em 0;font-size:.5em;white-space:nowrap;overflow:hidden}
+.tb span{display:block;overflow:hidden;text-overflow:ellipsis;transform:translate(-1px,calc(-.02em - 1px))}
+.hero.nf .tv{padding-right:0}
+.face{flex:none;width:96px;height:96px;border-radius:50%;background:#0001;border:3px solid var(--on);overflow:hidden;display:flex;align-items:center;justify-content:center;color:var(--on);font-size:12px;line-height:1.3;text-align:center;cursor:pointer}
+.face img{width:100%;height:100%;object-fit:cover}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;grid-auto-flow:row dense}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:8px 8px 12px;position:relative}
+.card.wide{grid-column:1/-1}
+.badge{display:inline-block;background:var(--ac);color:var(--on);border-radius:99px;padding:2px 10px 2px;line-height:1.4;font-size:13px;margin:2px 0 8px;max-width:100%}
+.ph{aspect-ratio:3/4;border-radius:8px;background:#000;display:flex;align-items:center;justify-content:center;overflow:hidden;color:var(--sub);font-size:13px;cursor:pointer;text-align:center}
+.card.wide .ph{aspect-ratio:16/9}
+.ph img{width:100%;height:100%;object-fit:contain;background:#000}
+.ph{position:relative}.lk{display:block;text-decoration:none;color:inherit}
+.th{display:flex;gap:10px;flex-wrap:wrap;margin:6px 4px 0;font-size:12px}.th a{color:var(--ac)}
+.card.fr{grid-column:1/-1}.card.fr .ph{aspect-ratio:16/9}
+.snap .card.fr{grid-column:auto;display:flex;flex-direction:column}.snap .card.fr .ph,.snap .card.fr .lk{margin:auto 0}
+.pd{position:absolute;left:8px;bottom:8px;border:0;border-radius:99px;background:#000b;color:#fff;font:inherit;font-size:12px;padding:5px 10px;cursor:pointer;letter-spacing:0;z-index:2}
+.face{position:absolute;top:28px;right:18px;width:var(--fs);height:var(--fs)}.fd{left:50%;bottom:4px;transform:translateX(-50%);font-size:11px;padding:2px 8px}
+.play{position:absolute;right:8px;bottom:8px;width:32px;height:32px;border-radius:50%;background:var(--ac);color:var(--on);display:flex;align-items:center;justify-content:center;font-size:13px;letter-spacing:0}
+.nm{font-family:inherit;font-weight:800;font-size:20px;margin:10px 4px 0;word-break:keep-all}
+.note{font-family:inherit;color:var(--sub);font-size:13px;margin:2px 4px 0;white-space:pre-wrap}
+.card input,.card textarea{width:100%;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:8px;padding:7px 9px;font:inherit;font-size:14px;margin-top:6px}
+.card textarea{resize:none;height:54px}
+.bar{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}
+button.b{font:inherit;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:10px 14px;border-radius:99px;cursor:pointer}
+button.p{background:var(--ac);color:var(--on);border-color:var(--ac)}
+.sw{display:flex;gap:8px;align-items:center;margin-top:6px;flex-wrap:wrap}
+.sw i{width:28px;height:28px;border-radius:50%;cursor:pointer;border:2px solid var(--card);outline:1px solid var(--line)}
+.view .edit{display:none}
+.hint{color:var(--sub);font-size:13px}
+.snap{width:800px}.snap.c2{width:600px}.snap.c3 .grid{grid-template-columns:repeat(3,1fr)}.snap .card.wide{grid-column:auto}.snap .card.wide .ph{aspect-ratio:3/4}
+#ov{position:fixed;inset:0;background:#000d;z-index:99;overflow:auto;padding:16px;text-align:center;color:#fff}#ov img{max-width:min(100%,480px);border-radius:8px}
+button:focus-visible,.ph:focus-visible,i:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
+</style></head><body>
+<div class="wrap">
+  <div id="intro">
+    <div class="intro-box">
+      <span class="intro-badge">2026 RECAP</span>
+      <h1 class="intro-title">2026 My<br>K-pop tags</h1>
+      <p class="intro-sub">나와 최애의 이름을 적고 올해의 연말결산을 시작해 보세요.</p>
+      <div class="fld">
+        <label for="in-nick">내 닉네임</label>
+        <input id="in-nick" placeholder="예: 닉네임" autocomplete="off">
+      </div>
+      <div class="fld">
+        <label for="in-fav">최애 이름</label>
+        <input id="in-fav" placeholder="예: 최애 이름" autocomplete="off">
+      </div>
+      <button class="b p start-btn" id="go">연말결산 시작하기</button>
+    </div>
+  </div>
+
+  <div id="main" style="display:none">
+    <div id="cap"><div class="hero">
+    <div id="tv" class="tv"></div>
+    <div class="face" id="fc" tabindex="0" role="button" aria-label="최애 얼굴 사진"></div>
+    </div><div class="grid" id="g"></div></div>
+    <div class="bar">
+    <button class="b p" id="tg">완성본 보기</button>
+    <button class="b" id="add">+ 항목 추가</button>
+    <button class="b" id="sv">이미지로 저장</button>
+    </div>
+    <div class="edit-only" id="ctl">
+    <p class="hint">사진은 카드를 눌러 올려요. 유튜브 링크를 넣으면 완성본에서 사진을 누를 때 영상으로 이동해요. 내용은 이 기기 브라우저에 저장돼요.</p></div>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script>
+var SH=['헤메코','파트','모에화','라이브','무대','메세지'];
+var DEF=['#올해의 헤메코','#올해의 파트','#올해의 모에화','#올해의 라이브','#올해의 무대','#올해의 직캠','#올해의 메세지'];
+var OLD=['올해의 헤메코','올해의 남자','올해의 무대','올해의 직캠','올해의 앨범','올해의 순간'];
+var S={v:6,title:'2026 My\nK-pop tags',nick:'',fav:'',ac:'#ffb997',cards:DEF.map(function(l){return{l:l,n:'',o:'',i:''}})};
+try{var raw=localStorage.getItem('idolrecap');if(raw){S=JSON.parse(raw);
+ if(!S.v||S.v<2){S.cards=S.cards.filter(function(c){return !(OLD.indexOf(c.l)>-1&&!c.n&&!c.o&&!c.i)});
+  DEF.forEach(function(l){if(!S.cards.some(function(c){return c.l===l}))S.cards.push({l:l,n:'',o:'',i:''})});S.v=2}
+ if(S.v<3){S.ac='#ffb997';S.v=3}
+ if(S.v<4){S.title='2026 my kpop tags';S.cards.forEach(function(c){var j=SH.indexOf(c.l);if(j>-1)c.l=DEF[j]});S.v=4}
+ if(S.v<5){S.title='2026 My\nK-pop tags';S.v=5}
+ if(S.v<6){if(!S.cards.some(function(c){return /직캠/.test(c.l)})){var mi=-1;S.cards.forEach(function(c,i){if(/메세지/.test(c.l))mi=i});var nc={l:'#올해의 직캠',n:'',o:'',i:'',y:''};if(mi<0)S.cards.push(nc);else S.cards.splice(mi,0,nc)}S.v=6}}}catch(e){}
+S.title='2026 My\nK-pop tags';
+if(!Array.isArray(S.cards)||!S.cards.length){S.cards=DEF.map(function(l){return{l:l,n:'',o:'',i:''}})}
+var view=false,$=function(i){return document.getElementById(i)};
+function save(){try{localStorage.setItem('idolrecap',JSON.stringify(S))}catch(e){}}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function isFree(l){return /파트|직캠|메세지/.test(l||'')}
+function ytid(u){var m=String(u||'').match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?(?:.*&)?v=|shorts\/|live\/|embed\/))([\w-]{11})/);return m?m[1]:''}
+function thHtml(u){var id=ytid(u);if(!id)return '';var b='https://img.youtube.com/vi/'+id+'/',a=' target="_blank" rel="noopener noreferrer">';return '<a href="'+b+'maxresdefault.jpg"'+a+'썸네일 열기</a><a href="'+b+'hqdefault.jpg"'+a+'안 열리면 이것</a>'}
+function phv(c,img){var ok=/^https?:\/\//i.test(c.y||''),ph='<div class="ph" style="cursor:default">'+img+(ok?'<span class="play">▶</span>':'')+'</div>';
+ return ok?'<a class="lk" href="'+esc(c.y)+'" target="_blank" rel="noopener noreferrer">'+ph+'</a>':ph}
+
+function startRecap(){
+ S.nick=$('in-nick').value.trim();
+ S.fav=$('in-fav').value.trim();
+ save();
+ $('intro').style.display='none';
+ $('main').style.display='block';
+ render();
+}
+$('go').onclick=startRecap;
+$('in-nick').onkeydown=function(e){if(e.key==='Enter')$('in-fav').focus()};
+$('in-fav').onkeydown=function(e){if(e.key==='Enter')startRecap()};
+
+function render(){
+ $('tv').innerHTML='<div class="l1">2026 '+esc(S.nick||'My')+(S.nick?"'s":'')+'</div><div class="l2"><span>K-pop tags</span>'+(S.fav?'<span class="tag"><svg class="tk" viewBox="3.7 0 56.3 100" aria-hidden="true"><path d="M60,0 L53.73,0 A9,9 0 0 0 47.36,2.64 L6.36,43.64 A9,9 0 0 0 6.36,56.36 L47.36,97.36 A9,9 0 0 0 53.73,100 L60,100 Z"/><circle cx="36" cy="50" r="6.2"/></svg><span class="tb"><span>#'+esc(S.fav.replace(/^#/,''))+'</span></span></span>':'')+'</div>';
+ $('cap').className=view?'view':'';
+ $('fc').innerHTML=S.face?'<img src="'+S.face+'" alt="최애 얼굴">'+(view?'':'<button class="pd fd" data-fd="1" aria-label="얼굴 사진 지우기">지우기</button>'):'<span>최애<br>얼굴</span>';
+ $('fc').style.display=(view&&!S.face)?'none':'';$('fc').style.cursor=view?'default':'pointer';
+ document.querySelector('.hero').classList.toggle('nf',view&&!S.face);$('ctl').style.display=view?'none':'';
+ $('add').style.display=view?'none':'';
+ $('tg').textContent=view?'수정하기':'완성본 보기';
+ $('g').innerHTML=S.cards.map(function(c,k){
+  var fr=isFree(c.l),wide=fr?' fr':((S.cards.length%2&&k===S.cards.length-1)?' wide':'');
+  var img=c.i?'<img src="'+c.i+'" alt="">':'<span>사진 추가</span>';
+  if(view)return '<div class="card'+wide+'"><span class="badge">'+esc(c.l)+'</span>'+phv(c,img)+'</div>';
+  return '<div class="card'+wide+'"><span class="badge">'+esc(c.l)+'</span><div class="ph" tabindex="0" data-p="'+k+'">'+img+(c.i?'<button class="pd" data-pd="'+k+'" aria-label="사진 지우기">사진 지우기</button>':'')+'</div><input data-f="y" data-k="'+k+'" inputmode="url" placeholder="유튜브 링크 (선택)" aria-label="유튜브 링크" value="'+esc(c.y||'')+'"><div class="th">'+thHtml(c.y)+'</div></div>';
+ }).join('');
+}
+$('g').addEventListener('input',function(e){var d=e.target.dataset;if(d.f){S.cards[d.k][d.f]=e.target.value;save();if(d.f==='y'){var t=e.target.parentNode.querySelector('.th');if(t)t.innerHTML=thHtml(e.target.value)}}});
+$('g').addEventListener('click',function(e){
+ var d=e.target.dataset;
+ if(d.pd!==undefined){S.cards[+d.pd].i='';save();render();return}
+ var p=e.target.closest('[data-p]');if(p&&!view)pick(+p.dataset.p)});
+$('g').addEventListener('keydown',function(e){if(e.key==='Enter'&&e.target.dataset.pd===undefined){var p=e.target.closest('[data-p]');if(p)pick(+p.dataset.p)}});
+function pick(k){
+ var f=document.createElement('input');f.type='file';f.accept='image/*';
+ f.onchange=function(){var r=new FileReader();r.onload=function(){var im=new Image();im.onload=function(){
+  var m=isFree(S.cards[k].l)?1200:800,s=Math.min(1,m/Math.max(im.width,im.height)),c=document.createElement('canvas');
+  c.width=Math.max(1,Math.round(im.width*s));c.height=Math.max(1,Math.round(im.height*s));c.getContext('2d').drawImage(im,0,0,c.width,c.height);
+  S.cards[k].i=c.toDataURL('image/jpeg',.82);save();render()};im.src=r.result};r.readAsDataURL(f.files[0])};
+ f.click()}
+function pickFace(){var f=document.createElement('input');f.type='file';f.accept='image/*';
+ f.onchange=function(){var r=new FileReader();r.onload=function(){var im=new Image();im.onload=function(){
+  var m=Math.min(im.width,im.height),z=Math.min(300,m),c=document.createElement('canvas');c.width=c.height=z;
+  c.getContext('2d').drawImage(im,(im.width-m)/2,(im.height-m)*.3,m,m,0,0,z,z);
+  S.face=c.toDataURL('image/jpeg',.85);save();render()};im.src=r.result};r.readAsDataURL(f.files[0])};f.click()}
+$('fc').onclick=function(e){if(view)return;if(e.target.dataset.fd){S.face='';save();render();return}pickFace()};
+$('fc').onkeydown=function(e){if(e.key==='Enter'&&!view&&!e.target.dataset.fd)pickFace()};
+$('add').onclick=function(){S.cards.push({l:'#올해의 ',n:'',o:'',i:''});save();render()};
+$('tg').onclick=function(){view=!view;render()};
+$('sv').onclick=function(){
+ var was=view;view=true;render();
+ if(!window.html2canvas){alert('이미지 저장을 불러오지 못했어요. 화면을 캡처해 주세요.');view=was;render();return}
+ var cap=$('cap'),bg=getComputedStyle(document.body).backgroundColor;
+ cap.classList.add('snap',S.cards.length>4?'c3':'c2');
+ function done(){cap.classList.remove('snap','c2','c3');view=was;render()}
+ html2canvas(cap,{backgroundColor:bg,scale:2}).then(function(c){
+  var o=document.createElement('canvas');o.width=1080;o.height=1080;var x=o.getContext('2d');
+  x.fillStyle=bg;x.fillRect(0,0,1080,1080);
+  var s=Math.min(1080/c.width,1080/c.height),w=c.width*s,h=c.height*s;
+  x.drawImage(c,(1080-w)/2,(1080-h)/2,w,h);
+  var d=document.createElement('div');d.id='ov';
+  d.innerHTML='<p>1:1 정사각형 이미지예요. 길게 눌러 저장하세요. 닫으려면 바깥을 눌러요.</p><img alt="리캡 이미지" src="'+o.toDataURL('image/png')+'">';
+  d.onclick=function(e){if(e.target!==d.querySelector('img'))d.remove()};
+  document.body.appendChild(d);done()}).catch(function(){alert('저장에 실패했어요. 화면을 캡처해 주세요.');done()})};
+
+/* 새로고침하면 항상 첫 화면(intro)부터 시작. 카드/사진 데이터는 그대로 유지되고, 이름만 입력칸에 미리 채워줌 */
+$('in-nick').value=S.nick||'';
+$('in-fav').value=S.fav||'';
+$('intro').style.display='';
+$('main').style.display='none';
+</script></body></html>
