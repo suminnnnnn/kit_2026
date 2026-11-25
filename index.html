@@ -4,7 +4,7 @@
 <title>2026 My K-pop tags</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
-:root{--bg:#000;--card:#292727;--ink:#f6f1ee;--sub:#a59d97;--line:#2e2a28;--ac:#ffb997;--on:#1b1512;--onr:#fff;color-scheme:dark;
+:root{--bg:#000;--card:#222222;--ink:#f6f1ee;--sub:#a59d97;--line:#2e2a28;--ac:#ffb997;--on:#1b1512;--onr:#fff;color-scheme:dark;
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 
 
@@ -17,9 +17,10 @@ input,textarea,button{letter-spacing:inherit;word-break:keep-all;overflow-wrap:b
 .intro-box{position:relative;background:var(--card);border:none;border-radius:22px;padding:24px 20px 28px}
 .intro-top{display:flex;align-items:center;gap:8px;margin-bottom:6px}
 .intro-top .intro-badge{margin-bottom:0}
-.badge.src{font-weight:500;margin:0;height:20px;font-size:12px}
-.badge.src .intro-tag-img{width:12px;height:20px}
-.badge.src .btb{height:20px;padding:0 8px 0 5px;border-radius:0 4px 4px 0}
+.badge.src{font-weight:500;margin:0;height:24px;font-size:12px;position:relative}
+.badge.src .intro-tag-img{width:14px;height:24px;position:relative;z-index:2;flex:none}
+.badge.src .btb{height:24px;padding:0 10px 0 8px;border-radius:0 4px 4px 0;margin-left:-1px;z-index:1;overflow:visible}
+.badge.src .btb span{line-height:1.25;overflow:visible}
 .intro-badge{display:inline-block;background:none;color:var(--ac);font-weight:700;font-size:19px;padding:0;margin-bottom:6px}
 .intro-title{font-weight:800;font-size:34px;line-height:1.15;margin:0 0 8px}
 .intro-sub{color:var(--sub);font-size:16px;margin:0 0 24px}
@@ -56,9 +57,6 @@ input,textarea,button{letter-spacing:inherit;word-break:keep-all;overflow-wrap:b
 .btb{display:flex;align-items:center;height:28px;min-width:0;margin-left:-1px;padding:0 11px 0 7px;background:var(--ac);border-radius:0 5px 5px 0;white-space:nowrap;overflow:hidden}
 .btb span{display:block;overflow:hidden;text-overflow:ellipsis;line-height:1}
 
-/* 1번 인트로 태그 아이콘 이미지 (스케일링 깨짐 방지) */
-.intro-tag-img{flex:0 0 auto;display:block;width:12px;height:20px}
-
 .ph{aspect-ratio:1/1;border-radius:8px;background:#000;display:flex;align-items:center;justify-content:center;overflow:hidden;color:var(--sub);font-size:13px;cursor:pointer;text-align:center;position:relative}
 .ph canvas.p-cv{width:100%;height:100%;display:block;background:#000}
 .lk{display:block;text-decoration:none;color:inherit}
@@ -75,11 +73,11 @@ button.p{background:var(--ac);color:var(--on);border:none}
 .view .edit{display:none}
 .hint{color:var(--sub);font-size:13px}
 #cap.snap{padding:0}
-.snap .badge{height:32px;font-size:18px}
+.snap .badge{height:32px;font-size:17px}
 .snap .btk{width:19px;height:32px}
-.snap .btb{height:32px;font-size:18px}
+.snap .btb{height:32px;font-size:17px}
 /* 3번 이미지 저장 시 #올해의ooo 텍스트 위로 1.5px 보정 */
-.snap .btb span{transform:translateY(-1.5px)}
+.snap .btb span{font-size:17px;transform:translateY(-1.5px)}
 .snap .tb span{transform:translateY(-1.5px)}
 .snap{width:800px;transform:none !important;margin:0 !important}.snap.c2{width:600px}.snap.c3 .grid{grid-template-columns:repeat(3,1fr)}
 #ov{position:fixed;inset:0;background:#000d;z-index:99;overflow:auto;padding:16px;text-align:center;color:#fff}#ov img{max-width:min(100%,480px);border-radius:8px}
@@ -104,7 +102,7 @@ button:focus-visible,.ph:focus-visible,i:focus-visible{outline:none}
 <div class="wrap" id="wrap">
   <div id="intro">
     <div class="intro-box">
-      <div class="intro-top"><span class="intro-badge">2026 RECAP</span><span class="badge src"><img class="intro-tag-img" width="12" height="20" alt="" aria-hidden="true" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='20' viewBox='0 0 60 100'%3E%3Cpath fill='%23ffb997' d='M60,0 L53,0 C50,0 48,1 46,3 L6,43 C2,47 2,53 6,57 L46,97 C48,99 50,100 53,100 L60,100 Z'/%3E%3Ccircle cx='35' cy='50' r='6.5' fill='%23292727'/%3E%3C/svg%3E"><span class="btb"><span>@kitmag.kr</span></span></span></div>
+      <div class="intro-top"><span class="intro-badge">2026 RECAP</span><span class="badge src"><img class="intro-tag-img" width="14" height="24" alt="" aria-hidden="true" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='24' viewBox='0 0 60 100'%3E%3Cpath fill='%23ffb997' d='M60,0 L53,0 C50,0 48,1 46,3 L6,43 C2,47 2,53 6,57 L46,97 C48,99 50,100 53,100 L60,100 Z'/%3E%3Ccircle cx='35' cy='50' r='6.5' fill='%23292727'/%3E%3C/svg%3E"><span class="btb"><span>@kitmag.kr</span></span></span></div>
       <h1 class="intro-title">2026 My<br>K-pop tags</h1>
       <p class="intro-sub">나와 최애의 이름을 적고 올해의 연말결산을 시작해 보세요.</p>
       <div class="fld">
@@ -532,7 +530,7 @@ function render(){
   var hasImg=Boolean(c.i);
   if(view)return '<div class="card">'+badgeHtml(c.l)+phv(c,k,hasImg)+'</div>';
   var inner=hasImg?'<canvas class="p-cv" width="800" height="800" data-k="'+k+'"></canvas>':'<span>'+emptyCardLabel()+'</span>';
-  return '<div class="card">'+badgeHtml(c.l)+'<div class="ph" tabindex="0" data-p="'+k+'">'+inner+(hasImg?'<button class="pd" data-pd="'+k+'" aria-label="사진 지우기">사진 지우기</button>':'')+'</div><input data-f="y" data-k="'+k+'" inputmode="url" placeholder="유튜브 링크 (선택)" aria-label="유튜브 링크" value="'+esc(c.y||'')+'"><div class="th">'+thHtml(c.y)+'</div></div>';
+  return '<div class="card">'+badgeHtml(c.l)+'<div class="ph" tabindex="0" data-p="'+k+'">'+inner+(hasImg?'<button class="pd" data-pd="'+k+'" aria-label="사진 지우기">사진 지우기</button>':'')+'</div><input data-f="y" data-k="'+k+'" inputmode="url" placeholder="유튜브 링크 추가 시, 썸네일 반영" aria-label="유튜브 링크" value="'+esc(c.y||'')+'"><div class="th">'+thHtml(c.y)+'</div></div>';
  }).join('');
  paintCardCanvases();
  syncScale();
@@ -597,7 +595,7 @@ $('fc').onclick=function(e){if(view)return;if(e.target.dataset.fd){S.face='';sav
 $('fc').onkeydown=function(e){if(e.key==='Enter'&&!view&&!e.target.dataset.fd)pickFace()};
 $('tg').onclick=function(){view=!view;render()};
 
-/* 이미지 저장: #cap 캡처 후 1620x1620 정사각형 출력, 콘텐츠는 상단 정렬(여백 포함) + 하단에 @kitmag.kr, 빈 사진은 '고민 중...' */
+/* 이미지 저장: #cap 캡처 후 1620x1620 정사각형 출력, 좌우 여백 최소화 + 콘텐츠 확대 + @kitmag.kr 위 10px 간격 */
 $('sv').onclick=function(){
  var was=view;view=true;savingSnap=true;render();
  if(!window.html2canvas){alert('이미지 저장을 불러오지 못했어요. 화면을 캡처해 주세요.');savingSnap=false;view=was;render();return}
@@ -625,7 +623,7 @@ $('sv').onclick=function(){
  paintCardCanvases().then(function(){
   return html2canvas(cap,{backgroundColor:bg,scale:3,useCORS:true,logging:false});
  }).then(function(c){
-  var outSize=1620,padT=32,padX=44,footH=96;
+  var outSize=1620,padT=20,padX=16,footH=52;
   var o=document.createElement('canvas');o.width=outSize;o.height=outSize;var x=o.getContext('2d');
   x.imageSmoothingEnabled=true;
   x.imageSmoothingQuality='high';
@@ -634,8 +632,8 @@ $('sv').onclick=function(){
   x.drawImage(c,(outSize-wOut)/2,padT,wOut,hOut);
   x.fillStyle='#a59d97';
   x.font="400 26px 'Pretendard Variable',Pretendard,sans-serif";
-  x.textAlign='center';x.textBaseline='alphabetic';
-  x.fillText('@kitmag.kr',outSize/2,outSize-30);
+  x.textAlign='center';x.textBaseline='top';
+  x.fillText('@kitmag.kr',outSize/2,padT+hOut+10);
   var d=document.createElement('div');d.id='ov';
   d.innerHTML='<p>1:1 정사각형 고화질 이미지예요. 길게 눌러 저장하세요. 닫으려면 바깥을 눌러요.</p><img alt="리캡 이미지" src="'+o.toDataURL('image/png')+'">';
   d.onclick=function(e){if(e.target!==d.querySelector('img'))d.remove()};
