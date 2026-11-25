@@ -28,7 +28,15 @@ input,textarea,button{letter-spacing:inherit;word-break:keep-all;overflow-wrap:b
 .fld label{display:block;font-size:15px;color:var(--sub);margin-bottom:6px}
 .fld input{width:100%;border:none;background:var(--bg);color:var(--ink);border-radius:12px;padding:13px 14px;font:inherit;font-size:18px}
 .fld input:focus{outline:none}
-.start-btn{width:100%;margin-top:10px;padding:15px;font-family:'Pretendard Variable',Pretendard,sans-serif;font-weight:900;font-variation-settings:'wght' 900;font-size:18px}
+.start-btn{
+  width:100%;
+  margin-top:10px;
+  padding:15px;
+  font-family:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,system-ui,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+  font-weight:500 !important;
+  font-variation-settings:'wght' 500 !important;
+  font-size:18px;
+}
 #cap{background:var(--bg);padding:8px 4px 20px}
 .hero{padding:28px 18px 22px;border-radius:22px;background:var(--ac);color:var(--on);margin-bottom:18px;position:relative;--fs:128px;min-height:calc(var(--fs) + 50px);display:flex;align-items:center}
 .tv{flex:1;min-width:0;font-weight:800;font-size:36px;line-height:1.12;padding-right:calc(var(--fs) + 10px);margin-top:0;transform:translate(0,-5px);word-break:keep-all;overflow-wrap:break-word}
@@ -60,7 +68,6 @@ input,textarea,button{letter-spacing:inherit;word-break:keep-all;overflow-wrap:b
 .ph{aspect-ratio:1/1;border-radius:8px;background:#000;display:flex;align-items:center;justify-content:center;overflow:hidden;color:var(--sub);font-size:13px;cursor:pointer;text-align:center;position:relative}
 .ph canvas.p-cv{width:100%;height:100%;display:block;background:#000}
 .lk{display:block;text-decoration:none;color:inherit}
-.th{display:flex;gap:10px;flex-wrap:wrap;margin:6px 4px 0;font-size:12px}.th a{color:var(--ac)}
 .snap .card{display:flex;flex-direction:column}.snap .card .ph,.snap .card .lk{margin:auto 0}
 .pd{position:absolute;left:8px;bottom:8px;border:0;border-radius:99px;background:#000b;color:#fff;font:inherit;font-size:12px;padding:5px 10px;cursor:pointer;letter-spacing:0;z-index:2}
 .face{position:absolute;top:28px;right:18px;width:var(--fs);height:var(--fs)}.fd{left:50%;bottom:4px;transform:translateX(-50%);font-size:11px;padding:2px 8px}
@@ -228,7 +235,6 @@ function save(){try{localStorage.setItem('idolrecap',JSON.stringify(S))}catch(e)
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
 function isFree(l){return /파트|직캠|메세지/.test(l||'')}
 function ytid(u){var m=String(u||'').match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?(?:.*&)?v=|shorts\/|live\/|embed\/))([\w-]{11})/);return m?m[1]:''}
-function thHtml(u){var id=ytid(u);if(!id)return '';var b='https://img.youtube.com/vi/'+id+'/',a=' target="_blank" rel="noopener noreferrer">';return '<a href="'+b+'maxresdefault.jpg"'+a+'썸네일 저장 후 업로드하기</a>'}
 
 /* 유튜브 링크 입력 시 카드 사진(c.i)이 비어 있으면 썸네일을 자동 채움 */
 function fetchYtThumbDataUrl(videoId){
@@ -530,7 +536,7 @@ function render(){
   var hasImg=Boolean(c.i);
   if(view)return '<div class="card">'+badgeHtml(c.l)+phv(c,k,hasImg)+'</div>';
   var inner=hasImg?'<canvas class="p-cv" width="800" height="800" data-k="'+k+'"></canvas>':'<span>'+emptyCardLabel()+'</span>';
-  return '<div class="card">'+badgeHtml(c.l)+'<div class="ph" tabindex="0" data-p="'+k+'">'+inner+(hasImg?'<button class="pd" data-pd="'+k+'" aria-label="사진 지우기">사진 지우기</button>':'')+'</div><input data-f="y" data-k="'+k+'" inputmode="url" placeholder="유튜브 링크 추가 시, 썸네일 반영" aria-label="유튜브 링크" value="'+esc(c.y||'')+'"><div class="th">'+thHtml(c.y)+'</div></div>';
+  return '<div class="card">'+badgeHtml(c.l)+'<div class="ph" tabindex="0" data-p="'+k+'">'+inner+(hasImg?'<button class="pd" data-pd="'+k+'" aria-label="사진 지우기">사진 지우기</button>':'')+'</div><input data-f="y" data-k="'+k+'" inputmode="url" placeholder="유튜브 링크 추가 시, 썸네일 반영" aria-label="유튜브 링크" value="'+esc(c.y||'')+'"></div>';
  }).join('');
  paintCardCanvases();
  syncScale();
@@ -543,8 +549,6 @@ $('g').addEventListener('input',function(e){
   S.cards[idx][d.f]=e.target.value;
   save();
   if(d.f==='y'){
-   var t=e.target.parentNode.querySelector('.th');
-   if(t)t.innerHTML=thHtml(e.target.value);
    autoFillYtThumb(idx,e.target.value);
    syncScale();
   }
